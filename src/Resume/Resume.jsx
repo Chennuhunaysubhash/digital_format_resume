@@ -79,7 +79,7 @@ const Resume = () => {
                                 <FaMapMarkerAlt />
                                 <span className="tooltip">Address: {address}</span>
                             </a>
-                            <a href="/hunaysubhash_chennu_JFS.pdf" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="Resume">
+                            <a href="https://chennuhunaysubhash.github.io/digital_format_resume/hunaysubhash_chennu_JFS.pdf" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="Resume">
                                 <FaFileAlt />
                                 <span className="tooltip">Resume</span>
                             </a>
