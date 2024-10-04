@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaLinkedin, FaGithub, FaCode, FaGlobe, FaEnvelope, FaMapMarkerAlt, FaFileAlt, FaDocker } from 'react-icons/fa';
 import './Resume.css';
 import profileImage from '/src/images/hunay3.jpg'; // Adjust the path as needed
@@ -10,14 +10,15 @@ import java from '/src/images/java.jpg';
 import scalerLogo from '/src/images/reactjs.jpg';
 
 const Resume = () => {
-    // Personal Information
     const name = "Hunay Subhash Chennu";
     const address = "Dno: 8-179, Sivalayam Street, Dirusumarru, Bhimavaram, West Godavari, Andhra Pradesh, India, Pin: 534239";
     const email = "hunaysubhash97@gmail.com";
     const phone = "+91 8074243933";
 
-    // Certifications
+    // Loading state
+    const [loading, setLoading] = useState(true);
     const [hoveredCertification, setHoveredCertification] = useState(null);
+    
     const certifications = [
         {
             name: 'Oracle Certified Associate, Java SE 8 Programmer',
@@ -40,7 +41,24 @@ const Resume = () => {
             image: scalerLogo,
         },
     ];
-    
+
+    // Simulate loading data
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 2000); // Simulate a 2-second loading time
+
+        return () => clearTimeout(timer); // Cleanup timeout on unmount
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="loading-container">
+                <h2>Loading...</h2>
+                {/* You can also add a spinner or any other loading animation here */}
+            </div>
+        );
+    }
 
     return (
         <div className="resume">
@@ -161,7 +179,7 @@ const Resume = () => {
                                 {hoveredCertification === certification.name && (
                                     <img 
                                         src={certification.image} 
-                                        alt={certification.issuer} 
+                                        alt={`${certification.name} Logo`} 
                                         className="certification-image" 
                                     />
                                 )}
@@ -171,37 +189,10 @@ const Resume = () => {
                 </div>
             </section>
 
-            {/* Technical Skills Section */}
-            <section className="section profile-summary">
-                <h2>Technical Skills</h2>
-                <div className="skills-container">
-                    <ul className="skills-list">
-                        <li><strong>Languages:</strong> Java, JavaScript, TypeScript, SQL, NoSQL</li>
-                        <li><strong>Frontend Technologies:</strong> React.js, HTML, CSS</li>
-                        <li><strong>Backend Technologies:</strong> Spring Boot, Hibernate, Microservices, Multithreading</li>
-                        <li><strong>Databases:</strong> MySQL, Oracle, PostgreSQL, MongoDB</li>
-                        <li><strong>Tools:</strong> JUnit, Git, Docker, Kubernetes, Jira</li>
-                        <li><strong>Methodologies:</strong> Agile, Scrum, SDLC</li>
-                    </ul>
-                </div>
-            </section>
-            <section className="section profile-summary">
-                <h2>Project Highlights</h2>
-                <div className="project profile-summary">
-                    <h3>CITI Business Online</h3>
-                    <p><strong>Role:</strong> Java Full Stack Developer</p>
-                    <ul>
-                        <li>Worked on developing key functionalities for financial transactions, enabling secure and efficient processes.</li>
-                        <li>Utilized Spring Boot and Microservices to modularize the application for better scalability.</li>
-                        <li>Collaborated with the database team to optimize SQL queries, ensuring faster data processing times.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section className="resume-footer">
-                <p>I hereby declare that the information provided above is true to the best of my knowledge and belief.</p>
-                <p className='left-display'>Hunay Subhash Chennu</p>
-            </section>
+            {/* Footer Section */}
+            <footer className="footer">
+                <p>© {new Date().getFullYear()} {name}. All rights reserved.</p>
+            </footer>
         </div>
     );
 };

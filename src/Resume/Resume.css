@@ -293,6 +293,15 @@ h2 {
     color: #005b73;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f0f0f0; /* Light background color */
+    font-size: 24px; /* Bigger font size */
+    color: #333; /* Dark text color */
+}
 
 
 /* Media Queries for Mobile Responsiveness */
