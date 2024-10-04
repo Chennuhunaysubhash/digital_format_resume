@@ -363,17 +363,18 @@ h2 {
     }
 }
 .company-name {
-    font-size: 1.5rem; /* Default for larger screens */
+    font-size: 2rem; /* Increase the size for desktop view */
 }
 
 @media (max-width: 768px) {
     .company-name {
-        font-size: 1.2rem; /* Adjust size for tablet and smaller screens */
+        font-size: 1.5rem; /* Slightly smaller for tablet view */
     }
 }
 
 @media (max-width: 480px) {
     .company-name {
-        font-size: 1rem; /* Adjust size for mobile phones */
+        font-size: 1.2rem; /* Even smaller for mobile phones */
     }
 }
+
