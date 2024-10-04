@@ -8,7 +8,7 @@ import oracleLogo from '/src/images/javaCertificate.jpg'; // Update paths accord
 import sql from '/src/images/sql.jpg';
 import java from '/src/images/java.jpg';
 import scalerLogo from '/src/images/reactjs.jpg';
-
+import virtusaLogo from '/src/images/virtusa_logo.jpeg';
 const Resume = () => {
     // Personal Information
     const name = "Hunay Subhash Chennu";
@@ -105,7 +105,7 @@ const Resume = () => {
                         <em>December 2021 - Present</em> | 
                         <span className="company-name">
                             Virtusa Consulting Services Pvt Ltd.
-                            <img src="/src/images/virtusa_logo.jpeg" alt="Virtusa Logo" className="company-image" />
+                            <img src={virtusaLogo} alt="Virtusa Logo" className="company-image" />
                         </span>, 
                         Hyderabad
                     </p>
