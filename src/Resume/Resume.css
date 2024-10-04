@@ -363,7 +363,7 @@ h2 {
     }
 }
 .company-name {
-    font-size: 2rem; /* Increase the size for desktop view */
+    font-size: 1.5rem; /* Increase the size for desktop view */
 }
 
 @media (max-width: 768px) {
